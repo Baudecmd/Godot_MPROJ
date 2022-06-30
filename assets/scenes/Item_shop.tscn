@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/scenes/Item_shop.gd" type="Script" id=1]
+[ext_resource path="res://assets/font/Minecraft.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/img/PngItem_1352730.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/flasks_4_2.png" type="Texture" id=4]
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id=4]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[node name="HBoxContainer" type="HBoxContainer"]
+margin_right = 454.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( -156, -41 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 30.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 34.0
+margin_top = 7.0
+margin_right = 319.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "ITEM POKE BALL"
+align = 1
+
+[node name="Prix" type="Label" parent="."]
+margin_left = 323.0
+margin_top = 7.0
+margin_right = 352.0
+margin_bottom = 23.0
+theme = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "500"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_left = 356.0
+margin_top = 7.0
+margin_right = 371.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 15, 15 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 3 )
+expand = true
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Button" type="Button" parent="."]
+margin_left = 390.0
+margin_right = 454.0
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/normal = SubResource( 4 )
+text = "ACHETER"
+
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]
+[connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]

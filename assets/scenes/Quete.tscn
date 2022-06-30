@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/scenes/Quete.gd" type="Script" id=1]
+[ext_resource path="res://assets/font/Minecraft.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/img/PngItem_3039504.png" type="Texture" id=3]
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[node name="HBoxContainer" type="HBoxContainer"]
+margin_right = 454.0
+margin_bottom = 24.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 35.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 35, 30 )
+texture = ExtResource( 3 )
+expand = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 39.0
+margin_top = 7.0
+margin_right = 426.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "QUETE ETRE GENTIL"
+align = 1
+
+[node name="CheckBox" type="CheckBox" parent="."]
+margin_left = 430.0
+margin_right = 454.0
+margin_bottom = 30.0
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="button_down" from="CheckBox" to="." method="_on_CheckBox_button_down"]
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]

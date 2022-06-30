@@ -1,0 +1,89 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://TextboxRPG.gd" type="Script" id=1]
+[ext_resource path="res://assets/font/Minecraft.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/kisspng-robot-enter-the-gungeon-pixel-art-kinetic-art-5b04448d3b0153.0513671615270063492417.png" type="Texture" id=3]
+
+[sub_resource type="CanvasItemMaterial" id=3]
+
+[sub_resource type="CanvasItemMaterial" id=4]
+next_pass = SubResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
+
+[sub_resource type="DynamicFont" id=8]
+
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 2 )
+
+[node name="TextboxRPG" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+text = "BONJOUR  ÇA VA  TRES  BIEN OUI  ET  VOUS  OUI  OK  ÇA  VA "
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_top = 0.757
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 125.0
+margin_top = -18.1
+margin_right = -10.0
+margin_bottom = -9.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+material = SubResource( 4 )
+margin_right = 377.0
+margin_bottom = 82.0
+color = Color( 1, 1, 1, 0.662745 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = -2.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/ColorRect/MarginContainer"]
+margin_right = 373.0
+margin_bottom = 78.0
+color = Color( 0, 0, 0, 0.807843 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ColorRect/MarginContainer/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 4.0
+margin_right = -18.0
+margin_bottom = -4.0
+custom_fonts/mono_font = SubResource( 5 )
+custom_fonts/bold_italics_font = SubResource( 6 )
+custom_fonts/italics_font = SubResource( 7 )
+custom_fonts/bold_font = SubResource( 8 )
+custom_fonts/normal_font = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Kisspng-robot-enter-the-gungeon-pixel-art-kinetic-art-5B04448D3B01530513671615270063492417" type="Sprite" parent="."]
+position = Vector2( 64, 241 )
+scale = Vector2( 0.181609, 0.178105 )
+texture = ExtResource( 3 )
